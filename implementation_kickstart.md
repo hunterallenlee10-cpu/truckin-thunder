@@ -135,3 +135,18 @@ State: `PlannerProvider` (open state, preset, persisted answers in sessionStorag
 - Mobile menu and Build Planner: focus trapped, Escape closes, focus returns to the trigger.
 - Yellow coverage measured on 113 viewport screenshots: all at or under about 5%.
 - No em dashes or double hyphens in copy.
+
+### Live Lighthouse (mobile, https://truckin-thunder-concept.vercel.app)
+
+| Page | Perf | A11y | Best Pr. | SEO | LCP | TBT |
+|---|---|---|---|---|---|---|
+| Home | 95 to 98 | 100 | 100 | 69* | 2.4 to 2.9 s | 30 to 60 ms |
+| About | 100 | 100 | 100 | 69* | 1.4 s | 40 ms |
+| Careers | 99 | 100 | 100 | 69* | 2.1 s | 20 ms |
+| Contact | 100 | 100 | 100 | 69* | 1.3 s | 50 ms |
+| Location (Broad Street) | 95 | 100 | 100 | 69* | 1.6 s | 240 ms |
+| Service pages | 89 to 92 | 100 | 100 | 69* | 3.0 to 3.6 s | 120 to 240 ms |
+
+\* SEO fails only "is-crawlable", from the intentional concept noindex. Every other SEO audit passes; flipping IS_CONCEPT removes it.
+
+Service pages trade a little score for sharpness: their wide hero photos are cover-cropped into a tall frame, so phones get a full-resolution image instead of a soft, upscaled one. To push them past 95, shorten the mobile hero or serve a lighter crop.
