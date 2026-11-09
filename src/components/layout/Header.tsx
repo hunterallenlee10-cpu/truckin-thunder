@@ -46,7 +46,7 @@ export function Header() {
         >
           {/* Soft top scrim keeps the transparent nav legible on bright photos. */}
           {!solid && (
-            <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[160%] bg-gradient-to-b from-asphalt/70 to-transparent" />
+            <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-[170%] bg-gradient-to-b from-asphalt/80 via-asphalt/40 to-transparent" />
           )}
           <div className="container-site relative flex h-[68px] items-center gap-6 nav:h-[84px]">
             <Link href="/" className="relative -my-2 shrink-0" aria-label={`${site.shortName} home`}>

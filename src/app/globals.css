@@ -464,3 +464,35 @@
 #print-root {
   display: none;
 }
+
+/* ------------------------------------------------------------------
+   Split hero. --seam is a unitless 0 to 100 spring from motion.
+   Each photo is 64% wide and slides so it stays centered in the
+   visible part of its panel as the seam moves.
+   ------------------------------------------------------------------ */
+.split-hero {
+  --seam: 50;
+  --pos-work: 62% 4%;
+  --pos-play: 42% 62%;
+}
+@media (min-width: 1024px) {
+  .split-hero {
+    --pos-work: 60% 30%;
+    --pos-play: 44% 56%;
+  }
+  .hero-work {
+    clip-path: inset(0 calc(100% - var(--seam) * 1%) 0 0);
+  }
+  .hero-play {
+    clip-path: inset(0 0 0 calc(var(--seam) * 1%));
+  }
+  .hero-work .hero-img {
+    transform: translateX(calc((var(--seam) / 2 - 32) / 0.64 * 1%));
+  }
+  .hero-play .hero-img {
+    transform: translateX(calc(((var(--seam) + 100) / 2 - 32) / 0.64 * 1%));
+  }
+  .hero-seam {
+    left: calc(var(--seam) * 1%);
+  }
+}
