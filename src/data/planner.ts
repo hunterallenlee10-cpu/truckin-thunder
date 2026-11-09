@@ -8,7 +8,7 @@ export type PurposeId = "trade" | "fleet-gov" | "offroad" | "towing" | "daily";
 
 export const vehicles: { id: VehicleId; label: string; hint: string }[] = [
   { id: "pickup", label: "Pickup Truck", hint: "Half ton to heavy duty" },
-  { id: "van", label: "Cargo Van", hint: "Transit, Sprinter, Express, ProMaster" },
+  { id: "van", label: "Cargo Van", hint: "Transit, Sprinter, Express" },
   { id: "chassis", label: "Cab and Chassis", hint: "Service body or flatbed" },
   { id: "suv", label: "SUV or Jeep", hint: "Trail and overland builds" },
   { id: "fleet", label: "A Whole Fleet", hint: "Multiple matching vehicles" },
