@@ -1,21 +1,21 @@
 import type { StaticImageData } from "next/image";
 
-import adrian from "../../public/images/partners/logo-adrian-steel.jpg";
-import buyers from "../../public/images/partners/logo-buyers-products.png";
-import bw from "../../public/images/partners/logo-bw-trailer-hitches.jpg";
-import cm from "../../public/images/partners/logo-cm-truck-beds.png";
-import curt from "../../public/images/partners/logo-curt.png";
-import decked from "../../public/images/partners/logo-decked.png";
-import holman from "../../public/images/partners/logo-holman.png";
-import homesteader from "../../public/images/partners/logo-homesteader-trailer.png";
-import legend from "../../public/images/partners/logo-legend.png";
-import ranger from "../../public/images/partners/logo-ranger-design.png";
-import are from "../../public/images/partners/logo-realtruck-are.png";
-import samlex from "../../public/images/partners/logo-samlex-america.png";
-import spitz from "../../public/images/partners/logo-spitzlift.png";
-import tommy from "../../public/images/partners/logo-tommy-gate.png";
-import uws from "../../public/images/partners/logo-uws.png";
-import weather from "../../public/images/partners/logo-weather-guard.png";
+import adrian from "../../public/images/partners/trimmed/logo-adrian-steel.png";
+import buyers from "../../public/images/partners/trimmed/logo-buyers-products.png";
+import bw from "../../public/images/partners/trimmed/logo-bw-trailer-hitches.png";
+import cm from "../../public/images/partners/trimmed/logo-cm-truck-beds.png";
+import curt from "../../public/images/partners/trimmed/logo-curt.png";
+import decked from "../../public/images/partners/trimmed/logo-decked.png";
+import holman from "../../public/images/partners/trimmed/logo-holman.png";
+import homesteader from "../../public/images/partners/trimmed/logo-homesteader-trailer.png";
+import legend from "../../public/images/partners/trimmed/logo-legend.png";
+import ranger from "../../public/images/partners/trimmed/logo-ranger-design.png";
+import are from "../../public/images/partners/trimmed/logo-realtruck-are.png";
+import samlex from "../../public/images/partners/trimmed/logo-samlex-america.png";
+import spitz from "../../public/images/partners/trimmed/logo-spitzlift.png";
+import tommy from "../../public/images/partners/trimmed/logo-tommy-gate.png";
+import uws from "../../public/images/partners/trimmed/logo-uws.png";
+import weather from "../../public/images/partners/trimmed/logo-weather-guard.png";
 
 type Use = "fleet" | "commercial" | "offroad" | "beds";
 
@@ -35,7 +35,7 @@ export type Brand = {
 export const brands: Brand[] = [
   { name: "Adrian Steel", logo: adrian, known: "Van shelving and racks", uses: ["fleet", "commercial"], wide: true, solid: true },
   { name: "Ranger Design", logo: ranger, known: "Van shelving and racks", uses: ["fleet", "commercial"] },
-  { name: "Weather Guard", logo: weather, known: "Toolboxes and storage", uses: ["fleet", "commercial", "beds"] },
+  { name: "Weather Guard", logo: weather, known: "Toolboxes and storage", uses: ["fleet", "commercial", "beds"], wide: true },
   { name: "A.R.E. / RealTruck", logo: are, known: "Truck caps", uses: ["commercial"], wide: true },
   { name: "Tommy Gate", logo: tommy, known: "Liftgates", uses: ["fleet", "commercial", "beds"] },
   { name: "CM Truck Beds", logo: cm, known: "Truck beds and service bodies", uses: ["fleet", "beds"] },

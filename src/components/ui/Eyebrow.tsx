@@ -23,5 +23,5 @@ export function Eyebrow({ index, children, className = "", accent = "blue" }: Pr
 }
 
 export function HazardStripe({ className = "" }: { className?: string }) {
-  return <div aria-hidden className={`hazard h-[6px] w-full ${className}`} />;
+  return <div aria-hidden className={`hazard h-2 w-full ${className}`} />;
 }
