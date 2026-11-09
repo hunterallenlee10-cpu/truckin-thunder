@@ -19,6 +19,10 @@ type Props = {
 
 /** Full-bleed photo hero for service pages. */
 export function PageHero({ photo, eyebrow, index, title, sub, preset, crumbs, secondary, tag }: Props) {
+  // The hero is at least 88% of the viewport tall and cover-cropped, so on
+  // narrow screens a wide photo renders much wider than the viewport.
+  const aspect = photo.src.width / photo.src.height;
+  const sizes = `(max-aspect-ratio: ${Math.round(aspect * 100)}/100) ${Math.ceil(aspect * 88)}vh, 100vw`;
   return (
     <section className="relative flex min-h-[88svh] items-end overflow-hidden bg-asphalt lg:min-h-[86svh]">
       <div className="kenburns absolute inset-0">
@@ -27,8 +31,8 @@ export function PageHero({ photo, eyebrow, index, title, sub, preset, crumbs, se
           alt={photo.alt}
           fill
           priority
-          placeholder="blur"
-          sizes="100vw"
+          quality={60}
+          sizes={sizes}
           className="object-cover"
           style={{ objectPosition: photo.position }}
         />
