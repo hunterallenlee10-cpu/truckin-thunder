@@ -9,7 +9,7 @@ export const IS_CONCEPT = true;
 export const site = {
   name: "Truckin Thunder Accessories",
   shortName: "Truckin Thunder",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://truckin-thunder.vercel.app").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://truckin-thunder-concept.vercel.app").replace(/\/$/, ""),
   foundingYear: 1978,
   city: "Richmond, Virginia",
   description:
