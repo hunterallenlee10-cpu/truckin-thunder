@@ -450,8 +450,10 @@
   body.printing-sheet > *:not(#print-root) {
     display: none !important;
   }
+  html,
   body.printing-sheet {
     background: #fff !important;
+    color-scheme: light;
   }
   body.printing-sheet::after,
   .grain::after {
