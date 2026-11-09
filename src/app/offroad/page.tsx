@@ -27,7 +27,7 @@ export default function OffroadPage() {
         eyebrow="Off-Road"
         title={
           <>
-            Built for the <span className="text-signal">trail.</span>
+            Built for the <span className="text-thunder-bright">trail.</span>
           </>
         }
         sub="Professional-grade off-road upgrades designed to perform in the real world, not just look good in a parking lot."

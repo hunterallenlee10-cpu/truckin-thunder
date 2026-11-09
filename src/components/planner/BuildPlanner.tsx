@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { usePlanner, type PlannerState } from "@/components/providers/PlannerProvider";
 import { useShop } from "@/components/providers/ShopProvider";
@@ -111,7 +111,7 @@ export default function BuildPlanner() {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 print:hidden">
-          <motion.div
+          <m.div
             className="absolute inset-0 bg-black/70"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -120,7 +120,7 @@ export default function BuildPlanner() {
             onClick={closePlanner}
             aria-hidden
           />
-          <motion.div
+          <m.div
             ref={dialogRef}
             role="dialog"
             aria-modal="true"
@@ -179,7 +179,7 @@ export default function BuildPlanner() {
                 {title}
               </h2>
               <AnimatePresence mode="wait" initial={false}>
-                <motion.div
+                <m.div
                   key={step}
                   initial={reduce ? false : { opacity: 0, x: 16 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -187,7 +187,7 @@ export default function BuildPlanner() {
                   transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {Body ? <Body errors={showErrors ? errors : {}} /> : <BuildSheetView />}
-                </motion.div>
+                </m.div>
               </AnimatePresence>
             </div>
 
@@ -222,7 +222,7 @@ export default function BuildPlanner() {
                 </button>
               </div>
             )}
-          </motion.div>
+          </m.div>
         </div>
       )}
     </AnimatePresence>

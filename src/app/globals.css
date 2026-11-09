@@ -416,9 +416,12 @@
     transform: scale(1.06);
   }
 }
-.kenburns {
-  animation: kenburns 20s var(--ease) both alternate infinite;
-  will-change: transform;
+/* Desktop only: keeps the mobile hero paint fast and calm. */
+@media (min-width: 1024px) {
+  .kenburns {
+    animation: kenburns 20s var(--ease) both alternate infinite;
+    will-change: transform;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

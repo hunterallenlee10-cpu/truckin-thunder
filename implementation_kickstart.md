@@ -109,14 +109,14 @@ State: `PlannerProvider` (open state, preset, persisted answers in sessionStorag
 
 ## 6. Phased checklist
 
-- [ ] Phase 0: Plan (this file), assets downloaded and verified (37/37)
-- [ ] Phase 1: Foundation: scaffold, tokens, fonts, layout, nav, utility bar, footer, hours util + tests
-- [ ] Phase 2: Split hero
-- [ ] Phase 3: Rest of home
-- [ ] Phase 4: Build Planner + Build Sheet + print
-- [ ] Phase 5: Inner pages (services, locations, about, careers, contact, 404)
-- [ ] Phase 6: SEO, metadata, schema, OG, favicons, sitemap
-- [ ] Phase 7: Polish and QA checklist, Lighthouse, final screenshots
+- [x] Phase 0: Plan (this file), assets downloaded and verified (37/37)
+- [x] Phase 1: Foundation: scaffold, tokens, fonts, layout, nav, utility bar, footer, hours util + tests
+- [x] Phase 2: Split hero
+- [x] Phase 3: Rest of home
+- [x] Phase 4: Build Planner + Build Sheet + print
+- [x] Phase 5: Inner pages (services, locations, about, careers, contact, 404)
+- [x] Phase 6: SEO, metadata, schema, OG, favicons, sitemap
+- [x] Phase 7: Polish and QA checklist, Lighthouse, final screenshots
 
 ## 7. Placeholders for Hunter to confirm with the owner
 
@@ -124,3 +124,14 @@ State: `PlannerProvider` (open state, preset, persisted answers in sessionStorag
 - `[CONFIRM RESPONSE TIME]` for the Build Sheet phone promise
 - FAQ answers marked `[TO CONFIRM WITH OWNER]`
 - Exact map coordinates per shop (approximate values used)
+
+## 8. QA results (Phase 7)
+
+- Lighthouse mobile, production build (local): Accessibility 100 on every page tested. Performance 91 to 98 (home 91 to 95, service 96, location 98, careers 94). Best Practices 96: the only flag is the Vercel Analytics script 404, which exists only once deployed. SEO 69: the only failing audit is "is-crawlable", caused on purpose by the IS_CONCEPT noindex; all other SEO audits pass.
+- CLS 0 to 0.001. TBT 20 to 120 ms.
+- 13 internal pages crawled, all 200; 404 page works. All tel:, mailto: and Google Maps links present.
+- Hours utility: 12 unit tests (weekday, open and close edges, after hours, Friday night, weekend, DST, visitor timezone).
+- Reduced motion: no pinning, no Ken Burns, reveals instant.
+- Mobile menu and Build Planner: focus trapped, Escape closes, focus returns to the trigger.
+- Yellow coverage measured on 113 viewport screenshots: all at or under about 5%.
+- No em dashes or double hyphens in copy.

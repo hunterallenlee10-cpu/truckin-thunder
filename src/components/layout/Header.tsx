@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Menu, Phone } from "lucide-react";
 import { nav, site } from "@/config/site";
 import { logos } from "@/data/images";
@@ -21,6 +21,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const { shop } = useShop();
 
   useEffect(() => {
@@ -31,7 +32,11 @@ export function Header() {
   }, []);
 
   useEffect(() => setMenuOpen(false), [pathname]);
-  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    // Return focus to the button that opened the menu.
+    requestAnimationFrame(() => menuButtonRef.current?.focus());
+  }, []);
 
   const solid = scrolled || menuOpen;
 
@@ -112,6 +117,7 @@ export function Header() {
                 <Phone size={18} strokeWidth={1.5} aria-hidden />
               </a>
               <button
+                ref={menuButtonRef}
                 type="button"
                 className="grid size-11 place-items-center rounded-[4px] border border-chalk/25 nav:hidden"
                 aria-label="Open menu"

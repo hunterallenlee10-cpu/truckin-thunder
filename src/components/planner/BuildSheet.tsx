@@ -42,7 +42,7 @@ export function SheetDocument({ state }: { state: PlannerState }) {
           <p className="display mt-2 text-[1.6rem]">{label(vehicles, state.vehicle)}</p>
           {vehicleLine && <p className="mt-1 text-[15px]">{vehicleLine}</p>}
           <h3 className="eyebrow mt-5 !text-[11px] text-ink-muted">02 · Purpose</h3>
-          <p className="mt-1 text-[16px] font-medium">{label(purposes, state.purpose)}</p>
+          <p className="mt-1 text-[16px] font-semibold">{label(purposes, state.purpose)}</p>
           {state.vehicle === "fleet" && (
             <p className="mt-1 text-[15px] text-ink-muted">
               {state.fleetSize && fleetSizes.includes(state.fleetSize as (typeof fleetSizes)[number]) ? `${state.fleetSize} vehicles` : ""}
@@ -89,7 +89,7 @@ export function SheetDocument({ state }: { state: PlannerState }) {
       <section className="grid gap-4 p-5 sm:grid-cols-3 sm:p-6">
         <div>
           <h3 className="eyebrow !text-[11px] text-ink-muted">Customer</h3>
-          <p className="mt-1 text-[15px] font-medium">{c.name}</p>
+          <p className="mt-1 text-[15px] font-semibold">{c.name}</p>
           {c.company && <p className="text-[14px] text-ink-muted">{c.company}</p>}
         </div>
         <div>

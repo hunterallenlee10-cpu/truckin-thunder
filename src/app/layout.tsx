@@ -12,13 +12,13 @@ import { organizationSchema } from "@/lib/seo";
 
 const barlow = Barlow({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
   variable: "--font-barlow",
   display: "swap",
 });
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["800"],
   variable: "--font-barlow-condensed",
   display: "swap",
 });
@@ -27,6 +27,7 @@ const barlowSemi = Barlow_Semi_Condensed({
   weight: ["600"],
   variable: "--font-barlow-semi",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {

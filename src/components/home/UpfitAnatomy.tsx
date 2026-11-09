@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
+import { AnimatePresence, m, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import { photos } from "@/data/images";
 import { anatomy } from "@/data/anatomy";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -87,7 +87,7 @@ export function UpfitAnatomy() {
               {/* Desktop: one callout at a time */}
               <div className="mt-8 hidden lg:block" aria-live="polite">
                 <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
+                  <m.div
                     key={spot.id}
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export function UpfitAnatomy() {
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <Callout index={active} />
-                  </motion.div>
+                  </m.div>
                 </AnimatePresence>
               </div>
 
@@ -210,22 +210,22 @@ function Callout({ index, dim = false }: { index: number; dim?: boolean }) {
   const h = anatomy[index];
   return (
     <article
-      className={`relative h-full rounded-[4px] border border-ink/12 bg-white p-6 transition-opacity duration-300 ${dim ? "opacity-60" : ""}`}
+      className={`relative h-full rounded-[4px] border bg-white p-6 transition-colors duration-300 ${dim ? "border-ink/12" : "border-ink"}`}
     >
       <div className="flex items-center justify-between gap-4">
         <span className="spec-tag text-ink-muted">{h.code}</span>
-        <span className="display text-[2.5rem] leading-none text-ink/15">0{index + 1}</span>
+        <span aria-hidden className="display text-[2.5rem] leading-none text-transparent [-webkit-text-stroke:1px_#b9bdc1]">0{index + 1}</span>
       </div>
       <h3 className="display mt-3 text-[2rem]">{h.title}</h3>
       <p className="mt-3 text-[16px] leading-relaxed text-ink-muted">{h.body}</p>
       <dl className="mt-5 grid grid-cols-2 border-t border-ink/10 pt-4 text-[13px]">
         <div>
           <dt className="eyebrow !text-[10px] text-ink-muted">Category</dt>
-          <dd className="mt-1 font-medium">{h.category}</dd>
+          <dd className="mt-1 font-semibold">{h.category}</dd>
         </div>
         <div>
           <dt className="eyebrow !text-[10px] text-ink-muted">Installed by</dt>
-          <dd className="mt-1 font-medium">Our in-house team</dd>
+          <dd className="mt-1 font-semibold">Our in-house team</dd>
         </div>
       </dl>
     </article>

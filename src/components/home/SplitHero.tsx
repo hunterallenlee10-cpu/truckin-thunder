@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion, useSpring, useTransform } from "motion/react";
+import { m, useReducedMotion, useSpring, useTransform } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { photos, type Photo } from "@/data/images";
 import { StartBuildButton } from "@/components/ui/StartBuildButton";
@@ -76,7 +76,7 @@ export function SplitHero() {
   };
 
   return (
-    <motion.section
+    <m.section
       ref={sectionRef}
       aria-labelledby="hero-title"
       onPointerMove={onPointerMove}
@@ -152,7 +152,7 @@ export function SplitHero() {
           ))}
         </ul>
       </div>
-    </motion.section>
+    </m.section>
   );
 }
 
@@ -181,8 +181,8 @@ function Panel({
             src={p.photo.src}
             alt={p.photo.alt}
             fill
-            priority
-            placeholder="blur"
+            priority={side === "work"}
+            quality={60}
             sizes="(min-width: 1024px) 64vw, 100vw"
             className="object-cover"
             style={{ objectPosition: `var(--pos-${side})` }}
@@ -190,7 +190,7 @@ function Panel({
         </div>
       </div>
 
-      <motion.div
+      <m.div
         aria-hidden
         className="absolute inset-0 hidden bg-asphalt lg:block"
         initial={false}
