@@ -66,7 +66,7 @@ export default function OffroadPage() {
               </Reveal>
             ))}
             <div className="flex flex-col justify-between bg-steel p-6 lg:p-7">
-              <span className="spec-tag self-start text-fog">OR-??</span>
+              <span className="spec-tag self-start text-fog">OR-08</span>
               <div className="mt-8">
                 <p className="display text-[1.9rem]">Not sure where to start?</p>
                 <p className="mt-2 text-[15px] text-fog">Tell us the truck and the trail. We&apos;ll spec the build.</p>
